@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - BrightStar Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .team-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .team-member {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        .member-image {
+            width: 100%;
+            height: 300px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .member-image i {
+            font-size: 100px;
+            color: #999;
+        }
+        .member-info {
+            padding: 1.5rem;
+        }
+        .member-info h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        .member-role {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .member-bio {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .member-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .skill-tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>BrightStar Animation</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#portfolio">Portfolio</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="team-content">
+        <h1>Meet Our Team</h1>
+        <p>The creative minds behind BrightStar Animation</p>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-image">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="member-info">
+                    <h3>Donald Winchester</h3>
+                    <div class="member-role">Founder & Creative Director</div>
+                    <div class="member-bio">
+                        A passionate 20-year-old animation advocate who lives and breathes animation. Donald's vision drives the creative direction of BrightStar Animation, focusing on creating magical content that brings joy to families worldwide.
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">Creative Direction</span>
+                        <span class="skill-tag">Story Development</span>
+                        <span class="skill-tag">Project Management</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="member-info">
+                    <h3>Kayda Cruz</h3>
+                    <div class="member-role">Lead Animator</div>
+                    <div class="member-bio">
+                        A 15-year-old animation prodigy whose talent and creativity know no bounds. Kayda brings characters to life with exceptional skill and attention to detail, creating fluid and expressive animations that captivate audiences.
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">2D Animation</span>
+                        <span class="skill-tag">Character Design</span>
+                        <span class="skill-tag">Motion Graphics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="member-info">
+                    <h3>Eden Szijjarto</h3>
+                    <div class="member-role">Assistant Director</div>
+                    <div class="member-bio">
+                        Our brilliant assistant director who ensures every project meets our high standards of quality. Eden's organizational skills and creative input help transform concepts into polished final productions.
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">Production Management</span>
+                        <span class="skill-tag">Storyboarding</span>
+                        <span class="skill-tag">Quality Assurance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>BrightStar Animation</h3>
+                <p>Creating magical animations since 2024</p>
+            </div>
+            <div class="social-links">
+                <a href="https://youtube.com/@BrightStarAnimation" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BrightStar Animation. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - BrightStar Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .faq-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 1rem;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: var(--accent-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        .faq-answer {
+            display: none;
+            padding: 1rem 0;
+            line-height: 1.6;
+        }
+        .faq-question.active + .faq-answer {
+            display: block;
+        }
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>BrightStar Animation</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#portfolio">Portfolio</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="faq-content">
+        <h1>Frequently Asked Questions</h1>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                What types of animation services do you offer?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                We specialize in 2D animation for children's content, including character animation, storyboarding, and complete animated series production. Our services cover concept development, character design, animation production, and post-production work.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How long does an animation project typically take?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Project timelines vary depending on complexity and scope. A short 1-2 minute animation might take 4-6 weeks, while a full episode could take 2-3 months. We'll provide a detailed timeline during our initial consultation based on your specific requirements.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What is your pricing structure?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Our pricing is project-based and depends on factors like animation complexity, length, character count, and timeline. We provide detailed quotes after understanding your project requirements. Contact us for a personalized estimate.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do you offer revisions in your animation projects?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Yes, we include a set number of revision rounds in our project quotes. We believe in getting your feedback at key stages of production to ensure the final product matches your vision perfectly.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Who owns the rights to the animated content?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Upon full payment, you receive complete ownership rights to the final animated content. We retain the right to showcase the work in our portfolio unless otherwise agreed upon in writing.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Can you help with script writing and story development?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Yes! We offer comprehensive pre-production services including script writing, storyboarding, and character development. Our team can help develop your idea from concept to final animation.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What format will the final animation be delivered in?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                We deliver animations in industry-standard formats (MP4, MOV) optimized for your intended platform (web, TV, social media). We can also provide the raw project files upon request.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do you work with clients internationally?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Yes, we work with clients worldwide! We use video conferencing and project management tools to maintain clear communication across time zones.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>BrightStar Animation</h3>
+                <p>Creating magical animations since 2024</p>
+            </div>
+            <div class="social-links">
+                <a href="https://youtube.com/@BrightStarAnimation" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BrightStar Animation. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Interaction
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const wasActive = question.classList.contains('active');
+                
+                // Close all FAQs
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                });
+
+                // Toggle current FAQ if it wasn't active
+                if (!wasActive) {
+                    question.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
