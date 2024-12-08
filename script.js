@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 formMessage.textContent = 'Sending your message...';
 
                 // Send form data to server
-                const response = await fetch('https://your-render-deployment-url.onrender.com/api/contact', {
+                const response = await fetch('https://brightstar-animation.onrender.com/api/contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
