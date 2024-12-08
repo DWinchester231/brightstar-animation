@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors({
-    origin: ['https://brightstaranimation.netlify.app', 'http://localhost:8000', 'https://your-app-name.onrender.com'],
+    origin: ['https://brightstaranimation2024.netlify.app', 'http://localhost:8000', 'https://your-app-name.onrender.com'],
     methods: ['POST'],
     credentials: true
 }));
