@@ -41,8 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
+                // Show loading state
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+                formMessage.className = 'form-message';
+                formMessage.textContent = 'Sending your message...';
+
                 // Send form data to server
-                const response = await fetch('https://brightstar-animation-server.onrender.com/api/contact', {
+                const response = await fetch('https://your-render-deployment-url.onrender.com/api/contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -61,12 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Show error message
                     formMessage.className = 'form-message error';
                     formMessage.textContent = result.error || 'Failed to send message. Please try again.';
+                    console.error('Server error:', result);
                 }
             } catch (error) {
                 // Show error message
                 formMessage.className = 'form-message error';
-                formMessage.textContent = 'Failed to send message. Please try again.';
-                console.error('Error:', error);
+                formMessage.textContent = 'Failed to connect to the server. Please check your internet connection and try again.';
+                console.error('Network error:', error);
+            } finally {
+                // Reset button state
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
             }
         });
     }
