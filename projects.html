@@ -194,6 +194,333 @@
         .logout-button:hover {
             background-color: var(--accent-hover);
         }
+        
+        /* Admin dashboard styles */
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .admin-controls {
+            display: flex;
+            align-items: center;
+        }
+        .action-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .action-button:hover {
+            background-color: var(--accent-hover);
+        }
+        .project-list {
+            margin-bottom: 2rem;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .project-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .status-badge {
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .project-card-content {
+            padding: 0.5rem;
+        }
+        .project-card-actions {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0.5rem;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            width: 500px;
+            max-width: 90%;
+        }
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        .cancel-button {
+            background: #ddd;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-right: 1rem;
+        }
+        .save-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .save-button:hover {
+            background-color: var(--accent-hover);
+        }
+        .delete-button {
+            background: #e74c3c;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .delete-button:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Project details modal styles */
+        .project-details-modal {
+            width: 800px;
+            max-width: 90%;
+        }
+        .project-details-content {
+            padding: 2rem;
+        }
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .details-section {
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 5px;
+        }
+        .project-info {
+            margin-bottom: 2rem;
+        }
+        .project-meta {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .status-timeline {
+            margin-top: 1rem;
+        }
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .milestone {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 5px;
+        }
+        .milestone-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            margin-right: 1rem;
+        }
+        .milestone-content {
+            margin-left: 1rem;
+        }
+        .milestone.current .milestone-dot {
+            background: var(--accent-hover);
+        }
+        .updates-section {
+            margin-top: 2rem;
+        }
+        .update-form {
+            margin-top: 1rem;
+        }
+        .update-input {
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1rem;
+        }
+        .attachments-section {
+            margin-top: 2rem;
+        }
+        .file-upload {
+            margin-top: 1rem;
+        }
+        .file-input {
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1rem;
+        }
+        .secondary-button {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .secondary-button:hover {
+            background-color: var(--bg-primary);
+        }
+        
+        /* Task Board Styles */
+        .task-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+        }
+        
+        .task-column {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 5px;
+            min-height: 300px;
+        }
+        
+        .task-list {
+            min-height: 200px;
+            margin: 1rem 0;
+        }
+        
+        .task-card {
+            background: var(--bg-primary);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            cursor: move;
+        }
+        
+        .task-card:hover {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Analytics Styles */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .analytics-card {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 5px;
+            height: 300px;
+        }
+        
+        .analytics-summary {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        
+        /* Team Collaboration Styles */
+        .team-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 1rem;
+            height: 500px;
+        }
+        
+        .team-members {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        
+        .team-chat {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 5px;
+        }
+        
+        .chat-input {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .chat-input input {
+            flex-grow: 1;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        .message-bubble {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 0.5rem;
+            max-width: 80%;
+        }
+        
+        .message-bubble.sent {
+            margin-left: auto;
+            background: var(--accent-color);
+        }
+        
+        .message-bubble.received {
+            margin-right: auto;
+            background: var(--bg-secondary);
+        }
     </style>
 </head>
 <body>
@@ -222,7 +549,7 @@
     <div class="projects-content">
         <div id="login-section" class="reveal-on-load">
             <h1>Project Tracking</h1>
-            <p>Please log in to view your project status</p>
+            <p>Please log in to access the system</p>
 
             <div class="login-form">
                 <div class="form-group">
@@ -230,14 +557,259 @@
                     <input type="email" id="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="projectId">Project ID</label>
-                    <input type="text" id="projectId" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="isAdmin"> Admin Login
+                    </label>
                 </div>
                 <button onclick="login()" class="login-button">Log In</button>
                 <p id="loginError" class="error-message" style="display: none;"></p>
             </div>
         </div>
 
+        <!-- Admin Dashboard -->
+        <div id="admin-section" class="hidden reveal-on-load">
+            <div class="admin-header">
+                <h1>Project Management Dashboard</h1>
+                <div class="admin-controls">
+                    <div class="search-filter">
+                        <input type="text" id="projectSearch" placeholder="Search projects..." class="search-input">
+                        <select id="statusFilter" class="filter-select">
+                            <option value="all">All Status</option>
+                            <option value="planning">Planning</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="review">Review</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <button onclick="showCreateProjectModal()" class="action-button create">
+                        <i class="fas fa-plus"></i> New Project
+                    </button>
+                    <button onclick="logout()" class="logout-button">
+                        <i class="fas fa-sign-out-alt"></i> Log Out
+                    </button>
+                </div>
+            </div>
+
+            <div class="project-list">
+                <h2>All Projects</h2>
+                <div id="projectsList" class="projects-grid">
+                    <!-- Projects will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Create/Edit Project Modal -->
+            <div id="projectModal" class="modal">
+                <div class="modal-content">
+                    <h2 id="modalTitle">Create New Project</h2>
+                    <form id="projectForm">
+                        <div class="form-group">
+                            <label for="projectName">Project Name *</label>
+                            <input type="text" id="projectName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Client Email *</label>
+                            <input type="email" id="clientEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectType">Project Type *</label>
+                            <select id="projectType" required>
+                                <option value="">Select type</option>
+                                <option value="2D Animation">2D Animation</option>
+                                <option value="3D Animation">3D Animation</option>
+                                <option value="Motion Graphics">Motion Graphics</option>
+                                <option value="Mixed Media">Mixed Media</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="startDate">Start Date *</label>
+                                <input type="date" id="startDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="endDate">Expected Completion *</label>
+                                <input type="date" id="endDate" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDescription">Description *</label>
+                            <textarea id="projectDescription" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectStatus">Status *</label>
+                            <select id="projectStatus" required>
+                                <option value="Planning">Planning</option>
+                                <option value="In Production">In Production</option>
+                                <option value="Review">Review</option>
+                                <option value="Completed">Completed</option>
+                            </select>
+                        </div>
+                        <div class="modal-buttons">
+                            <button type="button" onclick="closeModal()" class="cancel-button">Cancel</button>
+                            <button type="submit" class="save-button">Save Project</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Delete Confirmation Modal -->
+            <div id="deleteModal" class="modal">
+                <div class="modal-content">
+                    <h2>Delete Project</h2>
+                    <p>Are you sure you want to delete this project? This action cannot be undone.</p>
+                    <div class="modal-buttons">
+                        <button onclick="closeDeleteModal()" class="cancel-button">Cancel</button>
+                        <button onclick="confirmDelete()" class="delete-button">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Details Modal -->
+            <div id="projectDetailsModal" class="modal">
+                <div class="modal-content large-modal">
+                    <div class="modal-header">
+                        <h2 id="detailsProjectTitle"></h2>
+                        <button onclick="closeProjectDetails()" class="close-button">&times;</button>
+                    </div>
+                    <div class="project-details-content">
+                        <div class="details-grid">
+                            <div class="details-section">
+                                <h3>Project Information</h3>
+                                <div id="projectInfo"></div>
+                                <div class="status-timeline">
+                                    <h4>Project Timeline</h4>
+                                    <div id="projectTimeline" class="timeline"></div>
+                                </div>
+                            </div>
+                            <div class="details-section">
+                                <h3>Milestones</h3>
+                                <div id="milestonesList" class="milestones-container"></div>
+                                <button onclick="showAddMilestoneForm()" class="secondary-button">
+                                    <i class="fas fa-plus"></i> Add Milestone
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="updates-section">
+                            <h3>Project Updates</h3>
+                            <div id="updatesContainer" class="updates-container"></div>
+                            <div class="update-form">
+                                <textarea id="updateText" placeholder="Add a project update..." class="update-input"></textarea>
+                                <button onclick="addProjectUpdate()" class="secondary-button">
+                                    <i class="fas fa-paper-plane"></i> Post Update
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="attachments-section">
+                            <h3>Attachments</h3>
+                            <div id="attachmentsList" class="attachments-container"></div>
+                            <div class="file-upload">
+                                <input type="file" id="fileInput" class="file-input" multiple>
+                                <button onclick="uploadFiles()" class="secondary-button">
+                                    <i class="fas fa-upload"></i> Upload Files
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task Management Modal -->
+            <div id="taskModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Task Management</h2>
+                        <button onclick="closeTaskModal()" class="close-button">&times;</button>
+                    </div>
+                    <div class="task-board">
+                        <div class="task-column" data-status="todo">
+                            <h3>To Do</h3>
+                            <div class="task-list" id="todoTasks"></div>
+                            <button onclick="showAddTaskForm('todo')" class="secondary-button">
+                                <i class="fas fa-plus"></i> Add Task
+                            </button>
+                        </div>
+                        <div class="task-column" data-status="in-progress">
+                            <h3>In Progress</h3>
+                            <div class="task-list" id="inProgressTasks"></div>
+                        </div>
+                        <div class="task-column" data-status="completed">
+                            <h3>Completed</h3>
+                            <div class="task-list" id="completedTasks"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Modal -->
+            <div id="analyticsModal" class="modal">
+                <div class="modal-content large-modal">
+                    <div class="modal-header">
+                        <h2>Project Analytics</h2>
+                        <button onclick="closeAnalyticsModal()" class="close-button">&times;</button>
+                    </div>
+                    <div class="analytics-content">
+                        <div class="analytics-grid">
+                            <div class="analytics-card">
+                                <h3>Project Progress</h3>
+                                <canvas id="progressChart"></canvas>
+                            </div>
+                            <div class="analytics-card">
+                                <h3>Task Distribution</h3>
+                                <canvas id="taskChart"></canvas>
+                            </div>
+                            <div class="analytics-card">
+                                <h3>Timeline Analysis</h3>
+                                <canvas id="timelineChart"></canvas>
+                            </div>
+                            <div class="analytics-card">
+                                <h3>Resource Allocation</h3>
+                                <canvas id="resourceChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="analytics-summary">
+                            <h3>Project Insights</h3>
+                            <div id="projectInsights"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Collaboration Modal -->
+            <div id="teamModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Team Collaboration</h2>
+                        <button onclick="closeTeamModal()" class="close-button">&times;</button>
+                    </div>
+                    <div class="team-content">
+                        <div class="team-members">
+                            <h3>Team Members</h3>
+                            <div id="teamMembersList"></div>
+                            <button onclick="showAddMemberForm()" class="secondary-button">
+                                <i class="fas fa-user-plus"></i> Add Member
+                            </button>
+                        </div>
+                        <div class="team-chat">
+                            <h3>Team Chat</h3>
+                            <div id="chatMessages" class="chat-messages"></div>
+                            <div class="chat-input">
+                                <input type="text" id="messageInput" placeholder="Type a message...">
+                                <button onclick="sendMessage()" class="secondary-button">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Project View -->
         <div id="projects-section" class="hidden reveal-on-load">
             <div class="project-header">
                 <h1>Your Project Status</h1>
@@ -316,15 +888,23 @@
     <script src="js/theme.js"></script>
     <script src="js/loading.js"></script>
     <script>
-        // Demo project data (replace with real data later)
-        const demoProjects = {
+        // Demo admin credentials
+        const adminCredentials = {
+            email: 'admin@brightstaranimation.com',
+            password: 'admin123' // In production, use proper authentication
+        };
+
+        // Demo project data
+        let projectsData = {
             'PROJ001': {
-                email: 'test@example.com',
+                id: 'PROJ001',
                 name: 'Animated Short Film - "The Journey"',
+                email: 'test@example.com',
                 description: 'A 5-minute animated short film about personal growth and discovery.',
                 type: '2D Animation',
                 status: 'In Production',
                 startDate: '2024-01-15',
+                endDate: '2024-03-15',
                 productionStatus: 'In Progress - 60% Complete',
                 reviewStatus: 'Pending',
                 completionDate: '2024-03-15',
@@ -336,79 +916,518 @@
             }
         };
 
+        // Login function
         function login() {
             const email = document.getElementById('email').value;
-            const projectId = document.getElementById('projectId').value;
+            const password = document.getElementById('password').value;
+            const isAdmin = document.getElementById('isAdmin').checked;
             const errorElement = document.getElementById('loginError');
             
-            // Simple validation
-            if (!email || !projectId) {
-                errorElement.textContent = 'Please fill in all fields';
-                errorElement.style.display = 'block';
-                return;
+            if (isAdmin) {
+                if (email === adminCredentials.email && password === adminCredentials.password) {
+                    localStorage.setItem('adminSession', 'true');
+                    showAdminDashboard();
+                } else {
+                    errorElement.textContent = 'Invalid admin credentials';
+                    errorElement.style.display = 'block';
+                }
+            } else {
+                const project = Object.values(projectsData).find(p => p.email === email);
+                if (project) {
+                    localStorage.setItem('projectSession', JSON.stringify({ email, projectId: project.id }));
+                    showProjectDetails(project);
+                } else {
+                    errorElement.textContent = 'Invalid credentials';
+                    errorElement.style.display = 'block';
+                }
             }
-
-            const project = demoProjects[projectId];
-            if (!project || project.email !== email) {
-                errorElement.textContent = 'Invalid credentials';
-                errorElement.style.display = 'block';
-                return;
-            }
-
-            // Login successful
-            localStorage.setItem('projectSession', JSON.stringify({ email, projectId }));
-            showProjectDetails(project);
         }
 
         function logout() {
+            localStorage.removeItem('adminSession');
             localStorage.removeItem('projectSession');
             document.getElementById('login-section').style.display = 'block';
+            document.getElementById('admin-section').style.display = 'none';
             document.getElementById('projects-section').style.display = 'none';
             document.getElementById('email').value = '';
-            document.getElementById('projectId').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('isAdmin').checked = false;
         }
 
-        function showProjectDetails(project) {
+        // Admin functions
+        function showAdminDashboard() {
             document.getElementById('login-section').style.display = 'none';
-            document.getElementById('projects-section').style.display = 'block';
+            document.getElementById('admin-section').style.display = 'block';
+            document.getElementById('projects-section').style.display = 'none';
+            loadProjects();
+        }
+
+        function loadProjects() {
+            const projectsList = document.getElementById('projectsList');
+            projectsList.innerHTML = '';
             
-            // Update project details
-            document.getElementById('projectName').textContent = project.name;
-            document.getElementById('projectDescription').textContent = project.description;
-            document.getElementById('projectType').textContent = `Type: ${project.type}`;
-            document.getElementById('projectStatus').textContent = `Status: ${project.status}`;
-            document.getElementById('startDate').textContent = project.startDate;
-            document.getElementById('productionStatus').textContent = project.productionStatus;
-            document.getElementById('reviewStatus').textContent = project.reviewStatus;
-            document.getElementById('completionDate').textContent = project.completionDate;
+            Object.values(projectsData).forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-card';
+                projectCard.innerHTML = `
+                    <div class="project-card-header">
+                        <h3>${project.name}</h3>
+                        <span class="status-badge ${project.status.toLowerCase().replace(' ', '-')}">${project.status}</span>
+                    </div>
+                    <div class="project-card-content">
+                        <p><strong>Client:</strong> ${project.email}</p>
+                        <p><strong>Type:</strong> ${project.type}</p>
+                        <p><strong>Start Date:</strong> ${project.startDate}</p>
+                    </div>
+                    <div class="project-card-actions">
+                        <button onclick="editProject('${project.id}')" class="action-button edit">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button onclick="showDeleteModal('${project.id}')" class="action-button delete">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button onclick="showProjectDetailsModal('${project.id}')" class="action-button view">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                    </div>
+                `;
+                projectsList.appendChild(projectCard);
+            });
+        }
 
-            // Update timeline status
-            if (project.status === 'In Production') {
-                document.getElementById('productionMilestone').classList.add('current');
+        // Modal functions
+        function showCreateProjectModal() {
+            document.getElementById('modalTitle').textContent = 'Create New Project';
+            document.getElementById('projectForm').reset();
+            document.getElementById('projectModal').style.display = 'block';
+        }
+
+        function editProject(projectId) {
+            const project = projectsData[projectId];
+            document.getElementById('modalTitle').textContent = 'Edit Project';
+            document.getElementById('projectName').value = project.name;
+            document.getElementById('clientEmail').value = project.email;
+            document.getElementById('projectType').value = project.type;
+            document.getElementById('startDate').value = project.startDate;
+            document.getElementById('endDate').value = project.endDate;
+            document.getElementById('projectDescription').value = project.description;
+            document.getElementById('projectStatus').value = project.status;
+            
+            document.getElementById('projectForm').dataset.projectId = projectId;
+            document.getElementById('projectModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+            document.getElementById('projectForm').reset();
+            delete document.getElementById('projectForm').dataset.projectId;
+        }
+
+        let projectToDelete = null;
+
+        function showDeleteModal(projectId) {
+            projectToDelete = projectId;
+            document.getElementById('deleteModal').style.display = 'block';
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+            projectToDelete = null;
+        }
+
+        function confirmDelete() {
+            if (projectToDelete) {
+                delete projectsData[projectToDelete];
+                loadProjects();
+                closeDeleteModal();
             }
+        }
 
-            // Show updates
-            const updatesHtml = project.updates.map(update => `
-                <div class="update-item">
-                    <div class="update-date">${update.date}</div>
+        // Project details modal functions
+        function showProjectDetailsModal(projectId) {
+            const project = projectsData[projectId];
+            displayProjectDetails(project);
+        }
+
+        function closeProjectDetails() {
+            document.getElementById('projectDetailsModal').style.display = 'none';
+        }
+
+        // Form submission
+        document.getElementById('projectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const projectId = this.dataset.projectId || `PROJ${Object.keys(projectsData).length + 1}`.padStart(7, '0');
+            const projectData = {
+                id: projectId,
+                name: document.getElementById('projectName').value,
+                email: document.getElementById('clientEmail').value,
+                type: document.getElementById('projectType').value,
+                startDate: document.getElementById('startDate').value,
+                endDate: document.getElementById('endDate').value,
+                description: document.getElementById('projectDescription').value,
+                status: document.getElementById('projectStatus').value,
+                updates: []
+            };
+
+            projectsData[projectId] = projectData;
+            loadProjects();
+            closeModal();
+        });
+
+        // Project filtering and search
+        function filterProjects() {
+            const searchTerm = document.getElementById('projectSearch').value.toLowerCase();
+            const statusFilter = document.getElementById('statusFilter').value;
+            const projects = Object.values(projectsData);
+            
+            const filteredProjects = projects.filter(project => {
+                const matchesSearch = project.name.toLowerCase().includes(searchTerm) ||
+                                    project.description.toLowerCase().includes(searchTerm);
+                const matchesStatus = statusFilter === 'all' || project.status.toLowerCase().replace(' ', '-') === statusFilter;
+                return matchesSearch && matchesStatus;
+            });
+            
+            displayProjects(filteredProjects);
+        }
+
+        // Display projects
+        function displayProjects(projects) {
+            const projectsList = document.getElementById('projectsList');
+            projectsList.innerHTML = '';
+            
+            projects.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-card';
+                projectCard.innerHTML = `
+                    <div class="project-card-header">
+                        <h3>${project.name}</h3>
+                        <span class="status-badge ${project.status.toLowerCase().replace(' ', '-')}">${project.status}</span>
+                    </div>
+                    <div class="project-card-content">
+                        <p><strong>Client:</strong> ${project.email}</p>
+                        <p><strong>Type:</strong> ${project.type}</p>
+                        <p><strong>Start Date:</strong> ${project.startDate}</p>
+                    </div>
+                    <div class="project-card-actions">
+                        <button onclick="editProject('${project.id}')" class="action-button edit">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button onclick="showDeleteModal('${project.id}')" class="action-button delete">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button onclick="showProjectDetailsModal('${project.id}')" class="action-button view">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                    </div>
+                `;
+                projectsList.appendChild(projectCard);
+            });
+        }
+
+        // Display project details
+        function displayProjectDetails(project) {
+            document.getElementById('detailsProjectTitle').textContent = project.name;
+            document.getElementById('detailsProjectTitle').dataset.projectId = project.id;
+            
+            // Display project info
+            const projectInfo = document.getElementById('projectInfo');
+            projectInfo.innerHTML = `
+                <div class="info-item">
+                    <span class="info-label">Status:</span>
+                    <span class="status-badge ${project.status.toLowerCase().replace(' ', '-')}">${project.status}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Start Date:</span>
+                    <span>${new Date(project.startDate).toLocaleDateString()}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Description:</span>
+                    <p>${project.description}</p>
+                </div>
+            `;
+            
+            // Display timeline
+            displayTimeline(project);
+            
+            // Display milestones
+            displayMilestones(project);
+            
+            // Display updates
+            displayProjectUpdates(project);
+            
+            // Display attachments
+            displayAttachments(project);
+            
+            document.getElementById('projectDetailsModal').style.display = 'block';
+        }
+
+        // Display timeline
+        function displayTimeline(project) {
+            const projectTimeline = document.getElementById('projectTimeline');
+            projectTimeline.innerHTML = '';
+            
+            const timelineItems = [
+                { date: project.startDate, text: 'Project Start' },
+                { date: project.endDate, text: 'Expected Completion' }
+            ];
+            
+            timelineItems.forEach(item => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'milestone';
+                timelineItem.innerHTML = `
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <h4>${item.text}</h4>
+                        <p>${new Date(item.date).toLocaleDateString()}</p>
+                    </div>
+                `;
+                projectTimeline.appendChild(timelineItem);
+            });
+        }
+
+        // Display milestones
+        function displayMilestones(project) {
+            const milestonesList = document.getElementById('milestonesList');
+            milestonesList.innerHTML = '';
+            
+            const milestones = [
+                { date: project.startDate, text: 'Project Start' },
+                { date: project.endDate, text: 'Expected Completion' }
+            ];
+            
+            milestones.forEach(milestone => {
+                const milestoneItem = document.createElement('div');
+                milestoneItem.className = 'milestone';
+                milestoneItem.innerHTML = `
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <h4>${milestone.text}</h4>
+                        <p>${new Date(milestone.date).toLocaleDateString()}</p>
+                    </div>
+                `;
+                milestonesList.appendChild(milestoneItem);
+            });
+        }
+
+        // Display project updates
+        function displayProjectUpdates(project) {
+            const updatesContainer = document.getElementById('updatesContainer');
+            updatesContainer.innerHTML = '';
+            
+            project.updates.forEach(update => {
+                const updateItem = document.createElement('div');
+                updateItem.className = 'update-item';
+                updateItem.innerHTML = `
+                    <div class="update-date">${new Date(update.date).toLocaleDateString()}</div>
                     <div class="update-text">${update.text}</div>
+                `;
+                updatesContainer.appendChild(updateItem);
+            });
+        }
+
+        // Display attachments
+        function displayAttachments(project) {
+            const attachmentsList = document.getElementById('attachmentsList');
+            attachmentsList.innerHTML = '';
+            
+            project.attachments.forEach(attachment => {
+                const attachmentItem = document.createElement('div');
+                attachmentItem.className = 'attachment-item';
+                attachmentItem.innerHTML = `
+                    <div class="attachment-name">${attachment.name}</div>
+                    <div class="attachment-size">${attachment.size} bytes</div>
+                `;
+                attachmentsList.appendChild(attachmentItem);
+            });
+        }
+
+        // Add project update
+        function addProjectUpdate() {
+            const updateText = document.getElementById('updateText').value;
+            if (!updateText.trim()) return;
+            
+            const projectId = document.getElementById('detailsProjectTitle').dataset.projectId;
+            const project = projectsData[projectId];
+            
+            if (!project.updates) project.updates = [];
+            
+            project.updates.unshift({
+                text: updateText,
+                date: new Date().toISOString()
+            });
+            
+            displayProjectUpdates(project);
+            document.getElementById('updateText').value = '';
+        }
+
+        // Upload files
+        function uploadFiles() {
+            const fileInput = document.getElementById('fileInput');
+            const files = fileInput.files;
+            if (files.length === 0) return;
+            
+            const projectId = document.getElementById('detailsProjectTitle').dataset.projectId;
+            const project = projectsData[projectId];
+            
+            if (!project.attachments) project.attachments = [];
+            
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    project.attachments.push({
+                        name: file.name,
+                        type: file.type,
+                        size: file.size,
+                        data: e.target.result,
+                        uploadDate: new Date().toISOString()
+                    });
+                    displayAttachments(project);
+                };
+                reader.readAsDataURL(file);
+            });
+            
+            fileInput.value = '';
+        }
+
+        // Task Management
+        function initializeTaskBoard() {
+            const drake = dragula([
+                document.getElementById('todoTasks'),
+                document.getElementById('inProgressTasks'),
+                document.getElementById('completedTasks')
+            ]);
+            
+            drake.on('drop', function(el, target, source) {
+                const taskId = el.dataset.taskId;
+                const newStatus = target.parentElement.dataset.status;
+                updateTaskStatus(taskId, newStatus);
+            });
+        }
+
+        function showAddTaskForm(status) {
+            const taskName = prompt('Enter task name:');
+            if (taskName) {
+                addTask({
+                    id: Date.now().toString(),
+                    name: taskName,
+                    status: status,
+                    assignee: '',
+                    dueDate: ''
+                });
+            }
+        }
+
+        function addTask(task) {
+            const taskElement = document.createElement('div');
+            taskElement.className = 'task-card';
+            taskElement.dataset.taskId = task.id;
+            taskElement.draggable = true;
+            taskElement.innerHTML = `
+                <h4>${task.name}</h4>
+                <p>${task.assignee || 'Unassigned'}</p>
+                <p>${task.dueDate || 'No due date'}</p>
+            `;
+            
+            document.getElementById(`${task.status}Tasks`).appendChild(taskElement);
+        }
+
+        // Analytics
+        function initializeAnalytics() {
+            const ctx = document.getElementById('progressChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Completed', 'In Progress', 'Planned'],
+                    datasets: [{
+                        data: [30, 50, 20],
+                        backgroundColor: ['#2ecc71', '#3498db', '#95a5a6']
+                    }]
+                }
+            });
+            
+            // Initialize other charts...
+            updateProjectInsights();
+        }
+
+        function updateProjectInsights() {
+            const insights = document.getElementById('projectInsights');
+            insights.innerHTML = `
+                <div class="insight-item">
+                    <h4>Project Health</h4>
+                    <p>Overall project is on track. Current completion rate: 65%</p>
+                </div>
+                <div class="insight-item">
+                    <h4>Resource Utilization</h4>
+                    <p>Team capacity is at 80%. Consider resource optimization.</p>
+                </div>
+                <div class="insight-item">
+                    <h4>Risk Analysis</h4>
+                    <p>2 potential risks identified. Mitigation plans in place.</p>
+                </div>
+            `;
+        }
+
+        // Team Collaboration
+        function initializeTeamChat() {
+            const projectId = document.getElementById('detailsProjectTitle').dataset.projectId;
+            const project = projectsData[projectId];
+            
+            if (!project.messages) project.messages = [];
+            
+            displayMessages(project.messages);
+        }
+
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value.trim();
+            if (!message) return;
+            
+            const projectId = document.getElementById('detailsProjectTitle').dataset.projectId;
+            const project = projectsData[projectId];
+            
+            project.messages.push({
+                text: message,
+                sender: 'Admin',
+                timestamp: new Date().toISOString()
+            });
+            
+            displayMessages(project.messages);
+            messageInput.value = '';
+        }
+
+        function displayMessages(messages) {
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.innerHTML = messages.map(message => `
+                <div class="message-bubble ${message.sender === 'Admin' ? 'sent' : 'received'}">
+                    <strong>${message.sender}</strong>
+                    <p>${message.text}</p>
+                    <small>${new Date(message.timestamp).toLocaleTimeString()}</small>
                 </div>
             `).join('');
-            document.getElementById('updates-list').innerHTML = updatesHtml;
+            
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        // Check for existing session
-        window.addEventListener('load', () => {
-            const session = localStorage.getItem('projectSession');
-            if (session) {
-                const { email, projectId } = JSON.parse(session);
-                const project = demoProjects[projectId];
-                if (project && project.email === email) {
-                    showProjectDetails(project);
-                } else {
-                    logout();
-                }
-            }
+        // Initialize new features
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeTaskBoard();
+            
+            // Load Chart.js for analytics
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+            script.onload = initializeAnalytics;
+            document.head.appendChild(script);
+            
+            // Load Dragula for drag-and-drop
+            const dragulaScript = document.createElement('script');
+            dragulaScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js';
+            document.head.appendChild(dragulaScript);
+            
+            const dragulaStyles = document.createElement('link');
+            dragulaStyles.rel = 'stylesheet';
+            dragulaStyles.href = 'https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.css';
+            document.head.appendChild(dragulaStyles);
         });
     </script>
 </body>
