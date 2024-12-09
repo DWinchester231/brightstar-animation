@@ -125,6 +125,75 @@
         .hidden {
             display: none;
         }
+        
+        .project-info {
+            margin-bottom: 2rem;
+        }
+        .project-meta {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .project-progress {
+            margin-bottom: 2rem;
+        }
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .milestone {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 5px;
+        }
+        .milestone-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            margin-right: 1rem;
+        }
+        .milestone-content {
+            margin-left: 1rem;
+        }
+        .milestone.current .milestone-dot {
+            background: var(--accent-hover);
+        }
+        .project-updates {
+            margin-bottom: 2rem;
+        }
+        .update-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 5px;
+        }
+        .update-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .update-text {
+            font-size: 1rem;
+        }
+        .logout-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .logout-button:hover {
+            background-color: var(--accent-hover);
+        }
     </style>
 </head>
 <body>
@@ -154,78 +223,77 @@
         <div id="login-section" class="reveal-on-load">
             <h1>Project Tracking</h1>
             <p>Please log in to view your project status</p>
-            <!-- Login prompt (shown when not logged in) -->
-            <div class="login-prompt" id="loginPrompt">
-                <h2>Client Login Required</h2>
-                <p>Please log in to view your project status and milestones.</p>
-                <button class="login-button" onclick="showLoginForm()">Log In</button>
+
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectId">Project ID</label>
+                    <input type="text" id="projectId" required>
+                </div>
+                <button onclick="login()" class="login-button">Log In</button>
+                <p id="loginError" class="error-message" style="display: none;"></p>
             </div>
         </div>
 
-        <!-- Projects view (hidden until logged in) -->
         <div id="projects-section" class="hidden reveal-on-load">
-            <h1>Your Projects</h1>
-            <!-- Sample Project Card -->
-            <div class="project-card">
-                <div class="project-header">
-                    <h2 class="project-title">The Jazzy Doggies - Episode 1</h2>
-                    <span class="project-status status-in-progress">In Progress</span>
-                </div>
-                
-                <div class="project-details">
-                    <div class="detail-item">
-                        <div class="detail-label">Start Date</div>
-                        <div>Dec 1, 2024</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Expected Completion</div>
-                        <div>Feb 15, 2025</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Project Manager</div>
-                        <div>Eden Szijjarto</div>
+            <div class="project-header">
+                <h1>Your Project Status</h1>
+                <button onclick="logout()" class="logout-button">Log Out</button>
+            </div>
+
+            <div class="project-details">
+                <div class="project-info">
+                    <h2 id="projectName">Loading...</h2>
+                    <p id="projectDescription">Loading...</p>
+                    <div class="project-meta">
+                        <span id="projectType">Type: Loading...</span>
+                        <span id="projectStatus">Status: Loading...</span>
                     </div>
                 </div>
 
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 45%;"></div>
+                <div class="project-progress">
+                    <h3>Project Timeline</h3>
+                    <div class="timeline">
+                        <div class="milestone completed">
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-content">
+                                <h4>Project Start</h4>
+                                <p id="startDate">Loading...</p>
+                            </div>
+                        </div>
+                        <div class="milestone" id="productionMilestone">
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-content">
+                                <h4>Production</h4>
+                                <p id="productionStatus">Loading...</p>
+                            </div>
+                        </div>
+                        <div class="milestone" id="reviewMilestone">
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-content">
+                                <h4>Review</h4>
+                                <p id="reviewStatus">Loading...</p>
+                            </div>
+                        </div>
+                        <div class="milestone" id="completionMilestone">
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-content">
+                                <h4>Completion</h4>
+                                <p id="completionDate">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <h3>Milestones</h3>
-                <ul class="milestone-list">
-                    <li class="milestone completed">
-                        <span class="milestone-status"><i class="fas fa-check-circle"></i></span>
-                        <div class="milestone-info">
-                            <div class="milestone-title">Script Approval</div>
-                            <div class="milestone-description">Final script approved by client</div>
-                        </div>
-                        <span class="milestone-date">Dec 5, 2024</span>
-                    </li>
-                    <li class="milestone completed">
-                        <span class="milestone-status"><i class="fas fa-check-circle"></i></span>
-                        <div class="milestone-info">
-                            <div class="milestone-title">Character Design</div>
-                            <div class="milestone-description">All character designs finalized</div>
-                        </div>
-                        <span class="milestone-date">Dec 15, 2024</span>
-                    </li>
-                    <li class="milestone pending">
-                        <span class="milestone-status"><i class="fas fa-clock"></i></span>
-                        <div class="milestone-info">
-                            <div class="milestone-title">Storyboard Review</div>
-                            <div class="milestone-description">Client review of complete storyboard</div>
-                        </div>
-                        <span class="milestone-date">Dec 30, 2024</span>
-                    </li>
-                    <li class="milestone pending">
-                        <span class="milestone-status"><i class="fas fa-clock"></i></span>
-                        <div class="milestone-info">
-                            <div class="milestone-title">Animation Production</div>
-                            <div class="milestone-description">Main animation work</div>
-                        </div>
-                        <span class="milestone-date">Jan 30, 2025</span>
-                    </li>
-                </ul>
+                <div class="project-updates">
+                    <h3>Latest Updates</h3>
+                    <div id="updates-list" class="updates-list">
+                        Loading updates...
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -247,6 +315,101 @@
 
     <script src="js/theme.js"></script>
     <script src="js/loading.js"></script>
-    <script src="script.js"></script>
+    <script>
+        // Demo project data (replace with real data later)
+        const demoProjects = {
+            'PROJ001': {
+                email: 'test@example.com',
+                name: 'Animated Short Film - "The Journey"',
+                description: 'A 5-minute animated short film about personal growth and discovery.',
+                type: '2D Animation',
+                status: 'In Production',
+                startDate: '2024-01-15',
+                productionStatus: 'In Progress - 60% Complete',
+                reviewStatus: 'Pending',
+                completionDate: '2024-03-15',
+                updates: [
+                    { date: '2024-02-01', text: 'Character designs finalized and approved' },
+                    { date: '2024-02-15', text: 'Storyboard complete, moving to animation phase' },
+                    { date: '2024-03-01', text: 'Animation 60% complete, on schedule' }
+                ]
+            }
+        };
+
+        function login() {
+            const email = document.getElementById('email').value;
+            const projectId = document.getElementById('projectId').value;
+            const errorElement = document.getElementById('loginError');
+            
+            // Simple validation
+            if (!email || !projectId) {
+                errorElement.textContent = 'Please fill in all fields';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            const project = demoProjects[projectId];
+            if (!project || project.email !== email) {
+                errorElement.textContent = 'Invalid credentials';
+                errorElement.style.display = 'block';
+                return;
+            }
+
+            // Login successful
+            localStorage.setItem('projectSession', JSON.stringify({ email, projectId }));
+            showProjectDetails(project);
+        }
+
+        function logout() {
+            localStorage.removeItem('projectSession');
+            document.getElementById('login-section').style.display = 'block';
+            document.getElementById('projects-section').style.display = 'none';
+            document.getElementById('email').value = '';
+            document.getElementById('projectId').value = '';
+        }
+
+        function showProjectDetails(project) {
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('projects-section').style.display = 'block';
+            
+            // Update project details
+            document.getElementById('projectName').textContent = project.name;
+            document.getElementById('projectDescription').textContent = project.description;
+            document.getElementById('projectType').textContent = `Type: ${project.type}`;
+            document.getElementById('projectStatus').textContent = `Status: ${project.status}`;
+            document.getElementById('startDate').textContent = project.startDate;
+            document.getElementById('productionStatus').textContent = project.productionStatus;
+            document.getElementById('reviewStatus').textContent = project.reviewStatus;
+            document.getElementById('completionDate').textContent = project.completionDate;
+
+            // Update timeline status
+            if (project.status === 'In Production') {
+                document.getElementById('productionMilestone').classList.add('current');
+            }
+
+            // Show updates
+            const updatesHtml = project.updates.map(update => `
+                <div class="update-item">
+                    <div class="update-date">${update.date}</div>
+                    <div class="update-text">${update.text}</div>
+                </div>
+            `).join('');
+            document.getElementById('updates-list').innerHTML = updatesHtml;
+        }
+
+        // Check for existing session
+        window.addEventListener('load', () => {
+            const session = localStorage.getItem('projectSession');
+            if (session) {
+                const { email, projectId } = JSON.parse(session);
+                const project = demoProjects[projectId];
+                if (project && project.email === email) {
+                    showProjectDetails(project);
+                } else {
+                    logout();
+                }
+            }
+        });
+    </script>
 </body>
 </html>
