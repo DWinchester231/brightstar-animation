@@ -98,10 +98,10 @@
     </header>
 
     <div class="quote-content">
-        <h1>Request a Quote</h1>
-        <p>Tell us about your project and we'll provide you with a custom quote.</p>
+        <h1 class="reveal-on-load">Request a Quote</h1>
+        <p class="reveal-on-load">Fill out the form below to get started with your animation project</p>
 
-        <form class="quote-form" id="quoteForm">
+        <form class="quote-form reveal-on-load" id="quoteForm">
             <div class="form-row">
                 <div class="form-group">
                     <label for="name">Name *</label>
@@ -187,6 +187,7 @@
     </footer>
 
     <script src="js/theme.js"></script>
+    <script src="js/loading.js"></script>
     <script>
         document.getElementById('quoteForm').addEventListener('submit', async (e) => {
             e.preventDefault();

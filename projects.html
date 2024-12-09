@@ -113,6 +113,18 @@
         .login-button:hover {
             background-color: var(--accent-hover);
         }
+        .reveal-on-load {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .reveal-on-load.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -139,17 +151,20 @@
     </header>
 
     <div class="projects-content">
-        <h1>Project Tracking</h1>
-        
-        <!-- Login prompt (shown when not logged in) -->
-        <div class="login-prompt" id="loginPrompt">
-            <h2>Client Login Required</h2>
-            <p>Please log in to view your project status and milestones.</p>
-            <button class="login-button" onclick="showLoginForm()">Log In</button>
+        <div id="login-section" class="reveal-on-load">
+            <h1>Project Tracking</h1>
+            <p>Please log in to view your project status</p>
+            <!-- Login prompt (shown when not logged in) -->
+            <div class="login-prompt" id="loginPrompt">
+                <h2>Client Login Required</h2>
+                <p>Please log in to view your project status and milestones.</p>
+                <button class="login-button" onclick="showLoginForm()">Log In</button>
+            </div>
         </div>
 
         <!-- Projects view (hidden until logged in) -->
-        <div id="projectsView" style="display: none;">
+        <div id="projects-section" class="hidden reveal-on-load">
+            <h1>Your Projects</h1>
             <!-- Sample Project Card -->
             <div class="project-card">
                 <div class="project-header">
@@ -231,6 +246,7 @@
     </footer>
 
     <script src="js/theme.js"></script>
+    <script src="js/loading.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
