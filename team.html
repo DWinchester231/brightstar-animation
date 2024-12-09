@@ -12,23 +12,6 @@
             margin: 2rem auto;
             padding: 2rem;
         }
-        .sorting-controls {
-            margin: 2rem 0;
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-        .sort-dropdown {
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            border: 1px solid var(--accent-color);
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            cursor: pointer;
-        }
-        .sort-dropdown:hover {
-            border-color: var(--accent-color-hover);
-        }
         .section-title {
             color: var(--accent-color);
             margin: 2rem 0 1rem;
@@ -119,21 +102,9 @@
         <h1 class="reveal-on-load">Meet Our Team</h1>
         <p class="reveal-on-load">The creative minds behind BrightStar Animation</p>
 
-        <div class="sorting-controls">
-            <label for="sort-select">Sort by:</label>
-            <select id="sort-select" class="sort-dropdown">
-                <option value="az">Sort A-Z</option>
-                <option value="za">Sort Z-A</option>
-                <option value="cast">Cast Only</option>
-                <option value="crew">Crew Only</option>
-                <option value="project">Sort by Project</option>
-            </select>
-        </div>
-
         <div id="cast-section">
             <h2 class="section-title">Cast</h2>
             <div class="team-grid">
-                <!-- Cast members will be added dynamically -->
             </div>
         </div>
 
@@ -214,78 +185,5 @@
 
     <script src="js/theme.js"></script>
     <script src="js/loading.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const sortSelect = document.getElementById('sort-select');
-            const castSection = document.getElementById('cast-section');
-            const crewSection = document.getElementById('crew-section');
-
-            function getAllTeamMembers() {
-                return Array.from(document.querySelectorAll('.team-member'));
-            }
-
-            function sortMembers(order) {
-                const members = getAllTeamMembers();
-                members.sort((a, b) => {
-                    if (order === 'project') {
-                        const projectA = a.dataset.project || '';
-                        const projectB = b.dataset.project || '';
-                        return projectA.localeCompare(projectB);
-                    }
-                    const nameA = a.querySelector('h3').textContent;
-                    const nameB = b.querySelector('h3').textContent;
-                    return order === 'az' ? 
-                        nameA.localeCompare(nameB) : 
-                        nameB.localeCompare(nameA);
-                });
-                return members;
-            }
-
-            function updateDisplay() {
-                const value = sortSelect.value;
-                const castGrid = castSection.querySelector('.team-grid');
-                const crewGrid = crewSection.querySelector('.team-grid');
-
-                // Clear existing members
-                castGrid.innerHTML = '';
-                crewGrid.innerHTML = '';
-
-                let members;
-                if (value === 'az' || value === 'za' || value === 'project') {
-                    members = sortMembers(value);
-                    members.forEach(member => {
-                        if (member.dataset.type === 'cast') {
-                            castGrid.appendChild(member.cloneNode(true));
-                        } else {
-                            crewGrid.appendChild(member.cloneNode(true));
-                        }
-                    });
-                    castSection.style.display = castGrid.children.length ? '' : 'none';
-                    crewSection.style.display = crewGrid.children.length ? '' : 'none';
-                } else if (value === 'cast') {
-                    members = sortMembers('az');
-                    members.forEach(member => {
-                        if (member.dataset.type === 'cast') {
-                            castGrid.appendChild(member.cloneNode(true));
-                        }
-                    });
-                    castSection.style.display = '';
-                    crewSection.style.display = 'none';
-                } else if (value === 'crew') {
-                    members = sortMembers('az');
-                    members.forEach(member => {
-                        if (member.dataset.type === 'crew') {
-                            crewGrid.appendChild(member.cloneNode(true));
-                        }
-                    });
-                    castSection.style.display = 'none';
-                    crewSection.style.display = '';
-                }
-            }
-
-            sortSelect.addEventListener('change', updateDisplay);
-            updateDisplay(); // Initial sort
-        });
-    </script>
 </body>
 </html>
