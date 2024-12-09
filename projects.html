@@ -230,24 +230,7 @@
         </div>
     </footer>
 
-    <script>
-        // Simulated login functionality
-        function showLoginForm() {
-            const email = prompt('Please enter your client email:');
-            const password = prompt('Please enter your password:');
-            
-            // This is just a demo - in reality, you'd want to implement proper authentication
-            if (email && password) {
-                document.getElementById('loginPrompt').style.display = 'none';
-                document.getElementById('projectsView').style.display = 'block';
-            }
-        }
-
-        // Add this to your navigation menu click handler
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
+    <script src="js/theme.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
