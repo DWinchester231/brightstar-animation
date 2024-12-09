@@ -192,7 +192,13 @@
 
     <script src="js/theme.js"></script>
     <script src="js/loading.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("bYnA1mhU6N-4wDRbp");
+        })();
+
         function updatePriceEstimate() {
             const duration = parseFloat(document.getElementById('duration').value) || 0;
             const projectType = document.getElementById('projectType').value;
@@ -225,31 +231,53 @@
             }
         }
 
-        document.getElementById('quoteForm').addEventListener('submit', (e) => {
+        document.getElementById('quoteForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData.entries());
             
-            // Store quote request in localStorage
-            const quotes = JSON.parse(localStorage.getItem('quoteRequests') || '[]');
-            quotes.push({
-                ...data,
-                timestamp: new Date().toISOString(),
-                id: `quote-${Date.now()}`
-            });
-            localStorage.setItem('quoteRequests', JSON.stringify(quotes));
-            
-            // Show success message
-            const successMessage = document.getElementById('successMessage');
-            successMessage.style.display = 'block';
-            
-            // Reset form
-            e.target.reset();
-            document.getElementById('priceEstimate').style.display = 'none';
-            
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth' });
+            try {
+                // Store quote request in localStorage
+                const quotes = JSON.parse(localStorage.getItem('quoteRequests') || '[]');
+                quotes.push({
+                    ...data,
+                    timestamp: new Date().toISOString(),
+                    id: `quote-${Date.now()}`
+                });
+                localStorage.setItem('quoteRequests', JSON.stringify(quotes));
+
+                // Send email using EmailJS
+                await emailjs.send(
+                    "service_vfy07ij",
+                    "template_kvbyncu",
+                    {
+                        name: data.name,
+                        email: data.email,
+                        projectType: data.projectType,
+                        duration: data.duration,
+                        deadline: data.deadline,
+                        style: data.style,
+                        description: data.description,
+                        budget: data.budget,
+                        timestamp: new Date().toLocaleString()
+                    }
+                );
+                
+                // Show success message
+                const successMessage = document.getElementById('successMessage');
+                successMessage.style.display = 'block';
+                
+                // Reset form
+                e.target.reset();
+                document.getElementById('priceEstimate').style.display = 'none';
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error sending your quote request. Please try again later.');
+            }
         });
 
         ['duration', 'projectType', 'style'].forEach(id => {
