@@ -929,3 +929,86 @@ input, textarea, button {
         padding: 1rem;
     }
 }
+
+/* Careers Page Styles */
+.careers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.careers-intro {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.job-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.job-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.job-card h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.job-card h3 {
+    color: #34495e;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.job-card ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.job-card li {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.application-info {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.application-info h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.email {
+    color: #3498db;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .job-listings {
+        grid-template-columns: 1fr;
+    }
+    
+    .careers-container {
+        padding: 1rem;
+    }
+}
