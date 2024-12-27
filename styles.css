@@ -933,7 +933,7 @@ input, textarea, button {
 /* Careers Page Styles */
 .careers-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 120px auto 2rem;
     padding: 2rem;
 }
 
@@ -958,6 +958,8 @@ input, textarea, button {
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .job-card:hover {
@@ -978,6 +980,7 @@ input, textarea, button {
     list-style-type: disc;
     padding-left: 1.5rem;
     margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .job-card li {
@@ -985,30 +988,87 @@ input, textarea, button {
     color: #666;
 }
 
-.application-info {
+.job-card .apply-button {
+    margin-top: auto;
+    padding: 0.8rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
     text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.job-card .apply-button:hover {
+    background-color: #2980b9;
+}
+
+/* Application Form Styles */
+.apply-container {
+    max-width: 800px;
+    margin: 120px auto 2rem;
     padding: 2rem;
-    background: #f8f9fa;
+}
+
+.application-form {
+    background: #fff;
+    padding: 2rem;
     border-radius: 10px;
-    margin-top: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.application-info h2 {
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
     color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-.email {
-    color: #3498db;
     font-weight: bold;
 }
 
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #2980b9;
+}
+
 @media (max-width: 768px) {
-    .job-listings {
-        grid-template-columns: 1fr;
+    .careers-container,
+    .apply-container {
+        padding: 1rem;
+        margin-top: 100px;
     }
     
-    .careers-container {
-        padding: 1rem;
+    .job-listings {
+        grid-template-columns: 1fr;
     }
 }
